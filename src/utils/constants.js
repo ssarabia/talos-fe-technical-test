@@ -1,5 +1,6 @@
 export const ROUTES = {
-  postList: '/'
+  postList: '/',
+  newPost: '/new-post'
 }
 
 export const ENDPOINTS = {
