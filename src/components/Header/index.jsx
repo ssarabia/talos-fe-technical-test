@@ -12,7 +12,7 @@ function Header () {
   return (
     <div className="header-container">
       <div id="logo-div" onClick={() => { history.push(ROUTES.postList) }}>
-        <img src={process.env.PUBLIC_URL + '/logo.svg'} />
+        <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="Company Logo"/>
         <Typography gutterBottom variant="h4" component="h4">
           Technical Test
         </Typography>
@@ -23,7 +23,7 @@ function Header () {
         </Typography>
         {!(location.pathname === ROUTES.newPost) &&
           <div id="add-container" onClick={() => { history.push(ROUTES.newPost) }}>
-            <img src={process.env.PUBLIC_URL + '/plusSign.svg'} id="add-icon" />
+            <img src={process.env.PUBLIC_URL + '/plusSign.svg'} id="add-icon" alt="Add Post"/>
             <h4 id="add-text">Add New Post</h4>
           </div>
         }

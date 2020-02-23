@@ -4,12 +4,13 @@
   flex-direction: column;
   .card-image {
     height: 140px;
-    overflow: hidden;
-    flex-flow: column wrap;
     transition: transform .2s; /* Animation */
     &:hover{
       transform: scale(1.5);
     }
+  }
+  .image-container{
+    overflow: hidden;
   }
   .card-bottom {
     margin-top: auto;

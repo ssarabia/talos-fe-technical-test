@@ -17,7 +17,7 @@ function ImageUpload ({ handleImageChange, image }) {
           Upload
           </Button>
         </label>
-        <img src={image || process.env.PUBLIC_URL + '/placeHolder.png'} />
+        <img src={image || process.env.PUBLIC_URL + '/placeHolder.png'} alt="Uploaded"/>
         <input
           accept="image/*"
           style={{ display: 'none' }}

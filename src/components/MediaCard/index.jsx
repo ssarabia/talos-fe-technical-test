@@ -11,15 +11,17 @@ import PropTypes from 'prop-types'
 import './MediaCard.scss'
 import { API_URL } from 'utils/constants'
 
-const MediaCard = ({ title, description, photoUrl, tags }) => {
+const MediaCard = ({ title, description, photoUrl, tags, onClickView }) => {
   return (
     <Card className='card-container'>
-      <CardActionArea>
-        <CardMedia
-          className='card-image'
-          image={API_URL + photoUrl}
-          title="Contemplative Reptile"
-        />
+      <CardActionArea onClick={onClickView}>
+        <div className='image-container'>
+          <CardMedia
+            className='card-image'
+            image={photoUrl ? API_URL + photoUrl : process.env.PUBLIC_URL + '/placeHolder.png'}
+            title="Contemplative Reptile"
+          />
+        </div>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {title}
@@ -33,7 +35,7 @@ const MediaCard = ({ title, description, photoUrl, tags }) => {
         <Typography variant="body1" color="initial" component="p">
           {tags.join(', ')}
         </Typography>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={onClickView}>
           View
         </Button>
       </CardActions>
@@ -45,7 +47,8 @@ MediaCard.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   photoUrl: PropTypes.string,
-  tags: PropTypes.array
+  tags: PropTypes.array,
+  onClickView: PropTypes.func
 }
 
 export default MediaCard

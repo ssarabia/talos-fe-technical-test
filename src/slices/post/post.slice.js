@@ -6,7 +6,8 @@ import apiClient from 'utils/apiClient'
 export const initialState = {
   posts: [],
   fetching: false,
-  createSuccess: false
+  createSuccess: false,
+  error: ''
 }
 
 const postSlice = createSlice({
