@@ -4,7 +4,8 @@ export const ROUTES = {
 }
 
 export const ENDPOINTS = {
-  posts: 'posts'
+  posts: 'posts',
+  uploadImage: id => (`posts/${id}/picture`)
 }
 
 export const API_URL = 'http://127.0.0.1:5000/'

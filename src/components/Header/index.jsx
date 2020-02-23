@@ -9,7 +9,6 @@ function Header () {
   const history = useHistory()
   const location = useLocation()
 
-  console.log(location)
   return (
     <div className="header-container">
       <div id="logo-div" onClick={() => { history.push(ROUTES.postList) }}>
@@ -19,7 +18,7 @@ function Header () {
         </Typography>
       </div>
       <div id="right-container">
-        <Typography gutterBottom variant="h5" component="h5">
+        <Typography gutterBottom variant="h5" component="h5" onClick={() => { history.push(ROUTES.postList) }}>
           Posts
         </Typography>
         {!(location.pathname === ROUTES.newPost) &&
